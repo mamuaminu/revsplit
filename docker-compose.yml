@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  revsplit:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY:-}
+    restart: unless-stopped
